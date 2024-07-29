@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-play-state: running;
+    animation-timing-function: linear;
+} */
+
+/* .box:hover{
+    animation-play-state: paused;
+} */
+
+/* @keyframes move {
+    0%{
+        top: 10px;
+        left: 10px;
+    }
+    50%{
+        top: 300px;
+        width: 20px;
+        height: 200px;
+        background-color: green;
+    }
+    100%{
+        top: 100px;
+        left: 500px;
+        top: 200px;
+        height: 20px;
+        background-color: lightcoral;
+    }
+} */
+
+
+
+/* @keyframes move {
+    0%{
+        top: 2%;
+        left: 2%;
+    }
+    25%{
+        top: 2%;
+        left: calc(98% - 100px);
+    }
+    50%{
+        top: calc(98% - 100px);
+        left: calc(98% - 100px);
+        transform: rotate(180deg) scale(0.5);
+    }
+    75%{
+        top: calc(98% - 100px);;
+        left: 2%;
+    }
+    100%{
+        top: 2%;
+        left: 2%;
+        transform: rotate(360deg) scale(1);
+        border-radius: 50%;
+    }
+} */
+
+
+/* @keyframes move {
+    from{
+        background-color: red;
+        top: 10px;
+        left: 10px;
+    }
+    to{
+        background-color: green;
+        top: 100px;
+        left: 500px;
+    }
+} */
+
+.container{
+    width: 50%;
+    height: 300px;
+    border: 2px solid #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(119, 119, 119);
+    animation-name: fromleft;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 5.5s;
+}
+
+.container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgb(31, 30, 30);
+    animation-name: fromtop;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 7.5s;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    border: 2px solid #000;
+    margin: 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px black;
+    position: relative;
+    top: -100px; 
+    opacity: 0;
+    z-index: 3;
+    animation-name: show;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.icon:nth-child(1){
+    animation-delay: 0s;
+}
+
+.icon:nth-child(2){
+    animation-delay: 1.5s;
+}
+
+.icon:nth-child(3){
+    animation-delay: 3s;
+}
+
+.icon:nth-child(4){
+    animation-delay: 4.5s;
+}
+
+@keyframes show{
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fromleft{
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes fromtop{
+    100%{
+        height: 100%;
+    }
+}
+
+.radius{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.circle{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation-name: run;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    transform: rotateZ(0deg) translate(79px) rotateY(0deg) rotateX(0deg);;
+}
+
+@keyframes run{
+    100%{
+        transform: rotateZ(360deg) translate(79px) rotateY(0deg) rotateX(0deg);
+    }
+}
